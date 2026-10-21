@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 # ───────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="Nueva Teoría del Comercio (Krugman)",
-    page_icon="",
+    page_icon="🌍",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -21,7 +21,7 @@ Analiza el modelo de **Krugman** de comercio internacional con competencia monop
 y economías de escala internas.
 - 🟢 **Costo Medio (CC)**: Curva de costos medios decreciente (economías de escala)
 - 🟣 **Precio (PP)**: Curva de precio decreciente con el número de firmas
--  **Equilibrio**: Intersección CC = PP (precio y escala óptima)
+- ⚫ **Equilibrio**: Intersección CC = PP (precio y escala óptima)
 """)
 
 # ──────────────────────────────────────────────────────────────
@@ -70,7 +70,7 @@ st.sidebar.markdown("⚫ Negro = Punto de equilibrio")
 
 # ───────────────────────────────────────────────────────────────
 # Calcular curvas con desplazamientos
-# ─────────────────────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────
 Q = np.linspace(0.5, 9.5, 200)
 
 # Parámetros actuales
@@ -144,7 +144,7 @@ if Q_eq is not None:
             value=f"{CC_eq:.2f}"
         )
 else:
-    st.error("⚠️ No hay equilibrio real con los parámetros actuales. Ajusta los valores.")
+    st.error("️ No hay equilibrio real con los parámetros actuales. Ajusta los valores.")
 
 st.markdown("---")
 
@@ -201,14 +201,14 @@ plt.tight_layout()
 
 # ───────────────────────────────────────────────────────────────
 # Mostrar gráfica en Streamlit
-# ──────────────────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────
 st.pyplot(fig)
 
 # ───────────────────────────────────────────────────────────────
 # Interpretación económica
 # ──────────────────────────────────────────────────────────────
 st.markdown("---")
-st.markdown("### 📚 Interpretación Económica")
+st.markdown("###  Interpretación Económica")
 
 col1, col2 = st.columns(2)
 
@@ -223,7 +223,7 @@ with col1:
     
     if delta_F > 0:
         st.warning(f"""
-        **⚠️ Aumento de costos fijos** (ΔF = {delta_F:+.1f})
+        **️ Aumento de costos fijos** (ΔF = {delta_F:+.1f})
         
         **Causas:**
         - Mayor inversión en tecnología
@@ -291,13 +291,13 @@ with col2:
         - Menos firmas en el mercado
         """)
     else:
-        st.info("➡️ PP en posición original")
+        st.info("️ PP en posición original")
 
 # ───────────────────────────────────────────────────────────────
 # Análisis de comercio internacional
-# ─────────────────────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────
 st.markdown("---")
-st.markdown("###  Implicaciones para el Comercio Internacional")
+st.markdown("### 🌍 Implicaciones para el Comercio Internacional")
 
 st.markdown("""
 El modelo de Krugman explica por qué países similares comercian entre sí 
@@ -307,7 +307,7 @@ El modelo de Krugman explica por qué países similares comercian entre sí
 col1, col2 = st.columns(2)
 
 with col1:
-    st.markdown("** Efectos del Libre Comercio:**")
+    st.markdown("**✨ Efectos del Libre Comercio:**")
     st.success("""
     1. **Mayor mercado** → Más consumidores
     2. **Más variedad** → Los consumidores tienen más opciones
@@ -346,7 +346,7 @@ scenario = st.selectbox(
 )
 
 if scenario == "1. Apertura Comercial (Libre Comercio)":
-    st.success(" **Libre Comercio:** Integración de mercados")
+    st.success("🌐 **Libre Comercio:** Integración de mercados")
     st.markdown("- **CC se desplaza hacia abajo** (ΔF = -3.0)")
     st.markdown("  - Mayor mercado permite mayor escala")
     st.markdown("  - Costos fijos se diluyen más")
@@ -356,14 +356,14 @@ if scenario == "1. Apertura Comercial (Libre Comercio)":
     st.markdown(f"- **Sugerencia:** ΔF = -3.0, Δa = +1.5")
 
 elif scenario == "2. Aumento de Costos Fijos (Barreras)":
-    st.error("🚧 **Barreras de entrada:** Regulaciones o costos altos")
+    st.error(" **Barreras de entrada:** Regulaciones o costos altos")
     st.markdown("- **CC se desplaza hacia arriba** (ΔF = +4.0)")
     st.markdown("- Menos firmas pueden entrar al mercado")
     st.markdown("- **Resultado:** ↑P, ↓Q, ↓Variedad")
     st.markdown(f"- **Sugerencia:** ΔF = +4.0")
 
 elif scenario == "3. Reducción de Costos Fijos (Tecnología)":
-    st.success("🔧 **Avance tecnológico:**")
+    st.success(" **Avance tecnológico:**")
     st.markdown("- **CC se desplaza hacia abajo** (ΔF = -4.0)")
     st.markdown("- Más firmas pueden entrar")
     st.markdown("- **Resultado:** ↓P, ↑Q, ↑Variedad")
@@ -377,7 +377,7 @@ elif scenario == "4. Mayor Competencia (↓ Precio)":
     st.markdown(f"- **Sugerencia:** Δa = -2.0")
 
 elif scenario == "5. Menor Competencia (↑ Precio)":
-    st.warning("📈 **Menor competencia:**")
+    st.warning(" **Menor competencia:**")
     st.markdown("- **PP se desplaza hacia arriba** (Δa = +2.0)")
     st.markdown("- Menos sustitutos, mayor poder de mercado")
     st.markdown("- **Resultado:** ↑P, ↑Q por firma, ↑Número de firmas")
@@ -413,16 +413,16 @@ if Q_eq is not None:
     - CC* = {CC_eq:.2f}
     """)
 
-# ───────────────────────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────
 # Conceptos clave
 # ──────────────────────────────────────────────────────────────
 st.markdown("---")
-st.markdown("###  Conceptos Clave del Modelo de Krugman")
+st.markdown("### 📖 Conceptos Clave del Modelo de Krugman")
 
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.markdown("** Economías de Escala**")
+    st.markdown("**📉 Economías de Escala**")
     st.markdown("Costo medio decrece")
     st.markdown("con la producción")
     st.markdown("Curva CC descendente")
@@ -444,13 +444,13 @@ with col3:
 
 # ───────────────────────────────────────────────────────────────
 # Número de firmas en equilibrio
-# ─────────────────────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────
 st.markdown("---")
-st.markdown("###  Número de Firmas en Equilibrio")
+st.markdown("### 🏭 Número de Firmas en Equilibrio")
 
 if Q_eq is not None and Q_eq > 0:
     # En el modelo de Krugman: n = S / (Q * b) donde S es tamaño del mercado
-    # Simplificado: n ∝ 1/Q (a menor escala por firma, más firmas)
+    # Simplificado: n  1/Q (a menor escala por firma, más firmas)
     S = 100  # Tamaño del mercado (supuesto)
     n_firms = S / (Q_eq * 10)  # Normalizado
     
@@ -466,4 +466,4 @@ if Q_eq is not None and Q_eq > 0:
     elif n_firms > 5:
         st.info("📊 **Competencia moderada:** Balance entre variedad y escala")
     else:
-        st.warning("️ **Baja competencia:** Pocas firmas, limitada variedad")
+        st.warning("⚠️ **Baja competencia:** Pocas firmas, limitada variedad")
